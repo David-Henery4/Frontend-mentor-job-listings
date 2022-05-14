@@ -1,0 +1,44 @@
+.job{
+    width: 85%;
+    padding: 8% 5%;
+    background-color: #fff;
+    box-shadow: 0 .8rem 1.8rem rgba($primary-color,.3);
+    border-radius: 5px;
+    //
+    &__info{
+        // height: 50%;
+        position: relative;
+    }
+    //
+    &__company-name{
+        color: $primary-color;
+        display: inline-block;
+    }
+    //
+    &__status{
+        display: inline-block;
+        p{
+            display: inherit;
+        }
+    }
+    //
+    &__logo{
+        position: absolute;
+        bottom: 5.8rem;
+        height:6rem;
+        img{
+            height: 100%;
+        }
+    } 
+    //
+    &__tech{
+        // height: 50%;
+    }
+}
+
+.middle-line{
+    height: .5px;
+    width: 100%;
+    background-color: $very-dark-grayish-cyan;
+    margin: 1rem 0;
+}
