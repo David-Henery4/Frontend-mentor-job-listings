@@ -5,8 +5,10 @@
   padding: 2%;
   width: 85%;
   margin: 0 auto;
-  background-color: $filter-tablets;
+  background-color: #fff;
   display: flex;
+  color: $primary-color;
+  box-shadow: 0 .8rem 1.8rem rgba($primary-color,.3) ;
   //
   &__tabs{
     width: 80%;
@@ -16,7 +18,7 @@
     display: inline-block;
     overflow: hidden;
     border-radius: 3px;
-    background-color: $dark-grayish-cyan;
+    background-color: $filter-tablets;
     margin: 1rem;
     &--title{
       display: inline-block;

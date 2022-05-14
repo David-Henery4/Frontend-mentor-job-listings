@@ -1,4 +1,6 @@
-// .content-section{
-//     display: grid;
-//     place-items: center;
-// }
+.content-section{
+    display: grid;
+    place-items: center; // might be temp
+    background-color: $background-color;
+    // height: 100%;
+}
