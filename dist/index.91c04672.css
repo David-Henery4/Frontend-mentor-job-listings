@@ -1,0 +1,79 @@
+*, :before, :after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: League Spartan, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.filter-box {
+  width: 85%;
+  background-color: #eef6f6;
+  border-radius: 5px;
+  margin: 0 auto;
+  padding: 2%;
+  display: flex;
+  position: relative;
+  bottom: 3rem;
+}
+
+.filter-box__tabs {
+  width: 80%;
+}
+
+.filter-box__tab {
+  background-color: #7b8e8e;
+  border-radius: 3px;
+  margin: 1rem;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.filter-box__tab--title {
+  padding: .8rem;
+  display: inline-block;
+  position: relative;
+  bottom: .1rem;
+}
+
+.filter-box__remove {
+  background-color: #5ba4a4;
+  padding: .8rem;
+  display: inline-block;
+}
+
+.filter-box__remove--icon {
+  position: relative;
+  top: .2rem;
+}
+
+.filter-box__clear {
+  width: 20%;
+  place-items: center;
+  display: grid;
+}
+
+.header {
+  height: 18vh;
+  width: 100vw;
+  background-color: #5ba4a4;
+}
+
+.header__svg {
+  height: 100%;
+}
+
+.header__svg svg {
+  height: 100%;
+  width: 100%;
+}
+
+/*# sourceMappingURL=index.91c04672.css.map */

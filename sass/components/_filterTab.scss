@@ -1,0 +1,44 @@
+.filter-box {
+  border-radius: 5px;
+  position: relative;
+  bottom: 3rem;
+  padding: 2%;
+  width: 85%;
+  margin: 0 auto;
+  background-color: $filter-tablets;
+  display: flex;
+  //
+  &__tabs{
+    width: 80%;
+  }
+  //
+  &__tab{
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 3px;
+    background-color: $dark-grayish-cyan;
+    margin: 1rem;
+    &--title{
+      display: inline-block;
+      padding: .8rem;
+      position: relative;
+      bottom: .1rem;
+    }
+  }
+  //
+  &__remove{
+    background-color: $primary-color;
+    display: inline-block;
+    padding: .8rem;
+    &--icon{
+      position: relative;
+      top: .2rem;
+    }
+  }
+  //
+  &__clear{
+    width: 20%;
+    display: grid;
+    place-items: center;
+  }
+}

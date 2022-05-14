@@ -1,0 +1,12 @@
+.header{
+    background-color: $primary-color;
+    height: 18vh;
+    width: 100vw;
+    &__svg{
+        height: 100%;
+        svg{
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
