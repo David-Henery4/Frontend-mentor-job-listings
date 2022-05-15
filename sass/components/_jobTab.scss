@@ -1,6 +1,6 @@
 .job{
     width: 85%;
-    padding: 8% 5%;
+    padding: 12% 5%;
     background-color: #fff;
     box-shadow: 0 .8rem 1.8rem rgba($primary-color,.3);
     border-radius: 5px;
@@ -21,10 +21,19 @@
             display: inherit;
         }
     }
+    // 
+    &__title{
+        margin: 1rem 0;
+    }
+    //
+    &__listing-details{
+        display: flex;
+        margin: 1.5rem 0;
+    }
     //
     &__logo{
         position: absolute;
-        bottom: 5.8rem;
+        bottom: 8.5rem;
         height:6rem;
         img{
             height: 100%;
