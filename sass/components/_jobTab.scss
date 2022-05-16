@@ -1,53 +1,86 @@
-.job{
-    width: 85%;
-    padding: 12% 5%;
-    background-color: #fff;
-    box-shadow: 0 .8rem 1.8rem rgba($primary-color,.3);
-    border-radius: 5px;
-    //
-    &__info{
-        // height: 50%;
-        position: relative;
+.job {
+  width: 85%;
+  padding: 8% 5%;
+  background-color: #fff;
+  box-shadow: 0 0.8rem 1.8rem rgba($primary-color, 0.3);
+  border-radius: 5px;
+  border-left: solid 4px $primary-color;
+  //
+  &__info {
+    // height: 50%;
+    position: relative;
+  }
+  //
+  &__company-name {
+    color: $primary-color;
+    display: inline-block;
+  }
+  //
+  &__status {
+    display: inline-block;
+    margin-left: 1.5rem;
+    p {
+      display: inherit;
+      border-radius: 15px;
+      text-align: center;
+      padding: 0.7rem 1rem 0.4rem;
+      color: $white-color;
+      font-size: 1.2rem;
+      // vertical-align: ;
     }
-    //
-    &__company-name{
-        color: $primary-color;
-        display: inline-block;
+    p:nth-child(odd) {
+      background-color: $primary-color;
     }
-    //
-    &__status{
-        display: inline-block;
-        p{
-            display: inherit;
-        }
+    p:nth-child(even) {
+      margin-left: 0.5rem;
+      background-color: $very-dark-grayish-cyan;
     }
-    // 
-    &__title{
-        margin: 1rem 0;
+  }
+  //
+  &__title {
+    margin: 1rem 0;
+  }
+  //
+  &__listing-details {
+    list-style-type: none;
+    display: flex;
+    li:not(:first-child){
+      margin-left: .5rem;
     }
-    //
-    &__listing-details{
-        display: flex;
-        margin: 1.5rem 0;
+    li p{
+      display: inline-block;
+      font-size: 1.3rem;
+      color: $dark-grayish-cyan;
+      font-weight: $font-weight-medium;
     }
-    //
-    &__logo{
-        position: absolute;
-        bottom: 8.5rem;
-        height:6rem;
-        img{
-            height: 100%;
-        }
-    } 
-    //
-    &__tech{
-        // height: 50%;
+    & li:before {
+      content: "\00a0\2022\00a0\00a0";
+      color: #999;
+      color: rgba(0, 0, 0, 0.5);
+      font-size: 11px;
     }
+    & li:first-child:before {
+      content: "";
+    }
+  }
+  //
+  &__logo {
+    position: absolute;
+    bottom: 8.5rem;
+    height: 6rem;
+    img {
+      height: 100%;
+    }
+  }
+  //
+  &__tech {
+    // height: 50%;
+  }
 }
 
-.middle-line{
-    height: .5px;
-    width: 100%;
-    background-color: $very-dark-grayish-cyan;
-    margin: 1rem 0;
+.middle-line {
+  height: 0.5px;
+  width: 100%;
+  background-color: $very-dark-grayish-cyan;
+  margin: 2rem 0 1rem;
 }
