@@ -530,18 +530,140 @@ var _controlJs = require("./mvc/controller/control.js");
 console.log("working");
 
 },{"./mvc/controller/control.js":"kEMnJ"}],"kEMnJ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 // Control
 var _modelJs = require("../model/model.js");
 var _viewJs = require("../views/view.js"); // might not need
 var _jobsViewJs = require("../views/jobsView.js");
+var _jobsViewJsDefault = parcelHelpers.interopDefault(_jobsViewJs);
 console.log("control working");
+// console.log(model.jsonData)
+const jobsDisplay = ()=>{
+    _jobsViewJsDefault.default.render(_modelJs.jsonData);
+};
+const init = ()=>{
+    jobsDisplay();
+};
+init();
 
-},{"../model/model.js":"bOhWW","../views/view.js":"jsK6f","../views/jobsView.js":"hOAKB"}],"bOhWW":[function(require,module,exports) {
+},{"../model/model.js":"bOhWW","../views/view.js":"jsK6f","../views/jobsView.js":"hOAKB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bOhWW":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "jsonData", ()=>jsonData
+);
+// DATA
+console.log("model");
+const jsonData = require("../../../data.json");
+
+},{"../../../data.json":"cn6Iz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cn6Iz":[function(require,module,exports) {
+module.exports = JSON.parse("[{\"id\":1,\"company\":\"Photosnap\",\"logo\":\"./images/photosnap.svg\",\"new\":true,\"featured\":true,\"position\":\"Senior Frontend Developer\",\"role\":\"Frontend\",\"level\":\"Senior\",\"postedAt\":\"1d ago\",\"contract\":\"Full Time\",\"location\":\"USA Only\",\"languages\":[\"HTML\",\"CSS\",\"JavaScript\"],\"tools\":[]},{\"id\":2,\"company\":\"Manage\",\"logo\":\"./images/manage.svg\",\"new\":true,\"featured\":true,\"position\":\"Fullstack Developer\",\"role\":\"Fullstack\",\"level\":\"Midweight\",\"postedAt\":\"1d ago\",\"contract\":\"Part Time\",\"location\":\"Remote\",\"languages\":[\"Python\"],\"tools\":[\"React\"]},{\"id\":3,\"company\":\"Account\",\"logo\":\"./images/account.svg\",\"new\":true,\"featured\":false,\"position\":\"Junior Frontend Developer\",\"role\":\"Frontend\",\"level\":\"Junior\",\"postedAt\":\"2d ago\",\"contract\":\"Part Time\",\"location\":\"USA Only\",\"languages\":[\"JavaScript\"],\"tools\":[\"React\",\"Sass\"]},{\"id\":4,\"company\":\"MyHome\",\"logo\":\"./images/myhome.svg\",\"new\":false,\"featured\":false,\"position\":\"Junior Frontend Developer\",\"role\":\"Frontend\",\"level\":\"Junior\",\"postedAt\":\"5d ago\",\"contract\":\"Contract\",\"location\":\"USA Only\",\"languages\":[\"CSS\",\"JavaScript\"],\"tools\":[]},{\"id\":5,\"company\":\"Loop Studios\",\"logo\":\"./images/loop-studios.svg\",\"new\":false,\"featured\":false,\"position\":\"Software Engineer\",\"role\":\"Fullstack\",\"level\":\"Midweight\",\"postedAt\":\"1w ago\",\"contract\":\"Full Time\",\"location\":\"Worldwide\",\"languages\":[\"JavaScript\"],\"tools\":[\"Ruby\",\"Sass\"]},{\"id\":6,\"company\":\"FaceIt\",\"logo\":\"./images/faceit.svg\",\"new\":false,\"featured\":false,\"position\":\"Junior Backend Developer\",\"role\":\"Backend\",\"level\":\"Junior\",\"postedAt\":\"2w ago\",\"contract\":\"Full Time\",\"location\":\"UK Only\",\"languages\":[\"Ruby\"],\"tools\":[\"RoR\"]},{\"id\":7,\"company\":\"Shortly\",\"logo\":\"./images/shortly.svg\",\"new\":false,\"featured\":false,\"position\":\"Junior Developer\",\"role\":\"Frontend\",\"level\":\"Junior\",\"postedAt\":\"2w ago\",\"contract\":\"Full Time\",\"location\":\"Worldwide\",\"languages\":[\"HTML\",\"JavaScript\"],\"tools\":[\"Sass\"]},{\"id\":8,\"company\":\"Insure\",\"logo\":\"./images/insure.svg\",\"new\":false,\"featured\":false,\"position\":\"Junior Frontend Developer\",\"role\":\"Frontend\",\"level\":\"Junior\",\"postedAt\":\"2w ago\",\"contract\":\"Full Time\",\"location\":\"USA Only\",\"languages\":[\"JavaScript\"],\"tools\":[\"Vue\",\"Sass\"]},{\"id\":9,\"company\":\"Eyecam Co.\",\"logo\":\"./images/eyecam-co.svg\",\"new\":false,\"featured\":false,\"position\":\"Full Stack Engineer\",\"role\":\"Fullstack\",\"level\":\"Midweight\",\"postedAt\":\"3w ago\",\"contract\":\"Full Time\",\"location\":\"Worldwide\",\"languages\":[\"JavaScript\",\"Python\"],\"tools\":[\"Django\"]},{\"id\":10,\"company\":\"The Air Filter Company\",\"logo\":\"./images/the-air-filter-company.svg\",\"new\":false,\"featured\":false,\"position\":\"Front-end Dev\",\"role\":\"Frontend\",\"level\":\"Junior\",\"postedAt\":\"1mo ago\",\"contract\":\"Part Time\",\"location\":\"Worldwide\",\"languages\":[\"JavaScript\"],\"tools\":[\"React\",\"Sass\"]}]");
+
+},{}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
 
 },{}],"jsK6f":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+// Main View
+parcelHelpers.export(exports, "MainView", ()=>MainView
+);
+class MainView {
+    _data;
+    constructor(){
+    // super()
+    }
+    clear() {
+        this._parentElement.innerHTML = "";
+    }
+    render(data) {
+        this._data = data;
+        const markup = this._generateMarkup();
+        this.clear();
+        this._parentElement.insertAdjacentHTML("afterbegin", markup);
+    }
+}
 
-},{}],"hOAKB":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hOAKB":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _viewJs = require("./view.js");
+class Jobs extends _viewJs.MainView {
+    _parentElement = document.querySelector(".jobs-container");
+    _generateMarkup() {
+        console.log(this._data);
+        return this._data.map((job)=>{
+            return `<div class="job">
+          <div class="job__info">
+            <div class="job__logo">
+              <img src="/images/photosnap.svg" alt="" />
+            </div>
+            <h4 class="job__company-name">Photosnap</h4>
+            <div class="job__status">
+              <p>NEW!</p>
+              <p>FEATURED</p>
+            </div>
+            <h3 class="job__title">Senior Frontend Developer</h3>
+            <ul class="job__listing-details">
+              <li>
+                <p>1d ago</p>
+              </li>
+              
+              <li>
+                <p>Full Time</p>
+              </li>
+              
+              <li>
+                <p>USA only</p>
+              </li>
+            </ul>
+          </div>
+  
+          <div class="middle-line"></div>
+  
+          <div class="job__tech">
+            <button class="job__tech--btns">Frontend</button>
+  
+            <button class="job__tech--btns">senior</button>
+  
+            <button class="job__tech--btns">HTML</button>
+  
+            <button class="job__tech--btns">CSS</button>
+  
+            <button class="job__tech--btns">Javascript</button>
+          </div>
+        </div>`;
+        }).join("");
+    }
+}
+exports.default = new Jobs();
 
-},{}]},["9sfYQ","8JKJx"], "8JKJx", "parcelRequire0c15")
+},{"./view.js":"jsK6f","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["9sfYQ","8JKJx"], "8JKJx", "parcelRequire0c15")
 
 //# sourceMappingURL=index.cf95660f.js.map

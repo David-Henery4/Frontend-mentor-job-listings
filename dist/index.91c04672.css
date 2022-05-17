@@ -28,7 +28,7 @@ body {
   color: #5ba4a4;
   background: #5ba4a433;
   border: none;
-  margin: .5rem;
+  margin: .7rem .7rem .7rem 0;
   padding: .7rem .9rem;
   font-family: inherit;
   font-size: 1.4rem;
@@ -89,6 +89,7 @@ body {
   background-color: #fff;
   border-left: 4px solid #5ba4a4;
   border-radius: 5px;
+  margin: 0 auto;
   padding: 8% 5%;
   box-shadow: 0 .8rem 1.8rem #5ba4a44d;
 }
