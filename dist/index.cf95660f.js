@@ -533,11 +533,9 @@ console.log("working");
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 // Control
 var _modelJs = require("../model/model.js");
-var _viewJs = require("../views/view.js"); // might not need
 var _jobsViewJs = require("../views/jobsView.js");
 var _jobsViewJsDefault = parcelHelpers.interopDefault(_jobsViewJs);
 console.log("control working");
-// console.log(model.jsonData)
 const jobsDisplay = ()=>{
     _jobsViewJsDefault.default.render(_modelJs.jsonData);
 };
@@ -546,7 +544,7 @@ const init = ()=>{
 };
 init();
 
-},{"../model/model.js":"bOhWW","../views/view.js":"jsK6f","../views/jobsView.js":"hOAKB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bOhWW":[function(require,module,exports) {
+},{"../model/model.js":"bOhWW","../views/jobsView.js":"hOAKB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bOhWW":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "jsonData", ()=>jsonData
@@ -588,7 +586,68 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"jsK6f":[function(require,module,exports) {
+},{}],"hOAKB":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _viewJs = require("./view.js");
+class Jobs extends _viewJs.MainView {
+    _parentElement = document.querySelector(".jobs-container");
+    _generateMarkup() {
+        console.log(this._data);
+        return this._data.map((job)=>{
+            return `<div class="job">
+          <div class="job__info">
+            <div class="job__logo">
+              <img src="${job.logo}" alt="" />
+            </div>
+            <h4 class="job__company-name">${job.company}</h4>
+            <div class="job__status">
+              ${job.new ? "<p>NEW!</p>" : ""}
+              ${job.featured ? "<p>FEATURED</p>" : ""}
+            </div>
+            <h3 class="job__title">${job.position}</h3>
+            <ul class="job__listing-details">
+              <li>
+                <p>${job.postedAt}</p>
+              </li>
+              
+              <li>
+                <p>${job.contract}</p>
+              </li>
+              
+              <li>
+                <p>${job.location}</p>
+              </li>
+            </ul>
+          </div>
+  
+          <div class="middle-line"></div>
+  
+          <div class="job__tech">
+          
+          ${job.languages.map((language)=>{
+                return `
+            <button class="job__tech--btns">${language}</button>
+              `;
+            }).join("")}
+
+          ${job.tools.map((tool)=>{
+                return `
+            <button class="job__tech--btns">${tool}</button>
+              `;
+            }).join("")}
+  
+            <button class="job__tech--btns">${job.level}</button>
+  
+            <button class="job__tech--btns">${job.role}</button>
+          </div>
+        </div>`;
+        }).join("");
+    }
+}
+exports.default = new Jobs();
+
+},{"./view.js":"jsK6f","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jsK6f":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 // Main View
@@ -610,60 +669,6 @@ class MainView {
     }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hOAKB":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _viewJs = require("./view.js");
-class Jobs extends _viewJs.MainView {
-    _parentElement = document.querySelector(".jobs-container");
-    _generateMarkup() {
-        console.log(this._data);
-        return this._data.map((job)=>{
-            return `<div class="job">
-          <div class="job__info">
-            <div class="job__logo">
-              <img src="/images/photosnap.svg" alt="" />
-            </div>
-            <h4 class="job__company-name">Photosnap</h4>
-            <div class="job__status">
-              <p>NEW!</p>
-              <p>FEATURED</p>
-            </div>
-            <h3 class="job__title">Senior Frontend Developer</h3>
-            <ul class="job__listing-details">
-              <li>
-                <p>1d ago</p>
-              </li>
-              
-              <li>
-                <p>Full Time</p>
-              </li>
-              
-              <li>
-                <p>USA only</p>
-              </li>
-            </ul>
-          </div>
-  
-          <div class="middle-line"></div>
-  
-          <div class="job__tech">
-            <button class="job__tech--btns">Frontend</button>
-  
-            <button class="job__tech--btns">senior</button>
-  
-            <button class="job__tech--btns">HTML</button>
-  
-            <button class="job__tech--btns">CSS</button>
-  
-            <button class="job__tech--btns">Javascript</button>
-          </div>
-        </div>`;
-        }).join("");
-    }
-}
-exports.default = new Jobs();
-
-},{"./view.js":"jsK6f","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["9sfYQ","8JKJx"], "8JKJx", "parcelRequire0c15")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["9sfYQ","8JKJx"], "8JKJx", "parcelRequire0c15")
 
 //# sourceMappingURL=index.cf95660f.js.map

@@ -18,5 +18,4 @@ render(data){
     this._parentElement.insertAdjacentHTML("afterbegin", markup);
 }
 
-
 }

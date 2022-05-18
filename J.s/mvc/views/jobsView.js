@@ -10,25 +10,25 @@ class Jobs extends MainView {
         return `<div class="job">
           <div class="job__info">
             <div class="job__logo">
-              <img src="/images/photosnap.svg" alt="" />
+              <img src="${job.logo}" alt="" />
             </div>
-            <h4 class="job__company-name">Photosnap</h4>
+            <h4 class="job__company-name">${job.company}</h4>
             <div class="job__status">
-              <p>NEW!</p>
-              <p>FEATURED</p>
+              ${job.new ? "<p>NEW!</p>" : ""}
+              ${job.featured ? "<p>FEATURED</p>" : ""}
             </div>
-            <h3 class="job__title">Senior Frontend Developer</h3>
+            <h3 class="job__title">${job.position}</h3>
             <ul class="job__listing-details">
               <li>
-                <p>1d ago</p>
+                <p>${job.postedAt}</p>
               </li>
               
               <li>
-                <p>Full Time</p>
+                <p>${job.contract}</p>
               </li>
               
               <li>
-                <p>USA only</p>
+                <p>${job.location}</p>
               </li>
             </ul>
           </div>
@@ -36,15 +36,26 @@ class Jobs extends MainView {
           <div class="middle-line"></div>
   
           <div class="job__tech">
-            <button class="job__tech--btns">Frontend</button>
+          
+          ${job.languages
+            .map((language) => {
+              return `
+            <button class="job__tech--btns">${language}</button>
+              `;
+            })
+            .join("")}
+
+          ${job.tools
+            .map((tool) => {
+              return `
+            <button class="job__tech--btns">${tool}</button>
+              `;
+            })
+            .join("")}
   
-            <button class="job__tech--btns">senior</button>
+            <button class="job__tech--btns">${job.level}</button>
   
-            <button class="job__tech--btns">HTML</button>
-  
-            <button class="job__tech--btns">CSS</button>
-  
-            <button class="job__tech--btns">Javascript</button>
+            <button class="job__tech--btns">${job.role}</button>
           </div>
         </div>`;
       })
