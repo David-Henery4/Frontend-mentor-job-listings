@@ -1,7 +1,46 @@
 import { MainView } from "./view.js";
+import {filterQuery} from "../controller/control.js"
 
 class Jobs extends MainView {
   _parentElement = document.querySelector(".jobs-container");
+  _jobTechContainer = document.querySelector(".job__tech");
+  _jobsContainer = document.querySelector(".jobs-container")
+
+  
+  constructor(){
+  super()
+  this._filterTagsEvent()
+  }
+  
+  _filterTagsEvent(){
+    this._jobsContainer.addEventListener("click", (e) => {
+      const clicked = e.target.closest(".job__tech--btns");
+      if (!clicked) return
+      console.log(clicked.textContent)
+      // this._filterJobs(clicked.textContent);
+      this.sendFilterQuery(clicked.textContent);
+    })
+  }
+
+  sendFilterQuery(query){
+    filterQuery(query)
+    // return query
+  }
+
+  // _filterJobs(filterStr){
+  //   console.log(filterStr)
+  //   const dataRay = this._data
+  //   console.log(dataRay)
+  //   const newRay = dataRay.filter(e => {
+  //     if (e.role === filterStr) return e
+  //   })
+  //   console.log(newRay)
+  //   this._data = newRay
+  //   console.log(this._data)
+  // }
+
+
+
 
   _generateMarkup() {
     console.log(this._data);

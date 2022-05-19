@@ -1,3 +1,7 @@
+.showFilter {
+  display: flex;
+}
+
 *, :before, :after {
   box-sizing: border-box;
   margin: 0;
@@ -42,7 +46,7 @@ body {
   border-radius: 5px;
   margin: 0 auto;
   padding: 2%;
-  display: flex;
+  display: none;
   position: relative;
   bottom: 3rem;
   box-shadow: 0 .8rem 1.8rem #5ba4a44d;

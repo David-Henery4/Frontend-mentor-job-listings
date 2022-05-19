@@ -531,16 +531,24 @@ console.log("working");
 
 },{"./mvc/controller/control.js":"kEMnJ"}],"kEMnJ":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "filterQuery", ()=>filterQuery
+);
 // Control
 var _modelJs = require("../model/model.js");
-var _jobsViewJs = require("../views/jobsView.js");
+var _jobsViewJs = require("../views/jobsView.js"); // not needed
 var _jobsViewJsDefault = parcelHelpers.interopDefault(_jobsViewJs);
 console.log("control working");
+const filterQuery = (query)=>{
+    // const query = Jobs.sendFilterQuery()
+    console.log(query);
+};
 const jobsDisplay = ()=>{
     _jobsViewJsDefault.default.render(_modelJs.jsonData);
 };
 const init = ()=>{
     jobsDisplay();
+// filterQuery()
 };
 init();
 
@@ -590,8 +598,39 @@ exports.export = function(dest, destName, get) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _viewJs = require("./view.js");
+var _controlJs = require("../controller/control.js");
 class Jobs extends _viewJs.MainView {
     _parentElement = document.querySelector(".jobs-container");
+    _jobTechContainer = document.querySelector(".job__tech");
+    _jobsContainer = document.querySelector(".jobs-container");
+    constructor(){
+        super();
+        this._filterTagsEvent();
+    }
+    _filterTagsEvent() {
+        this._jobsContainer.addEventListener("click", (e)=>{
+            const clicked = e.target.closest(".job__tech--btns");
+            if (!clicked) return;
+            console.log(clicked.textContent);
+            // this._filterJobs(clicked.textContent);
+            this.sendFilterQuery(clicked.textContent);
+        });
+    }
+    sendFilterQuery(query) {
+        _controlJs.filterQuery(query);
+    // return query
+    }
+    // _filterJobs(filterStr){
+    //   console.log(filterStr)
+    //   const dataRay = this._data
+    //   console.log(dataRay)
+    //   const newRay = dataRay.filter(e => {
+    //     if (e.role === filterStr) return e
+    //   })
+    //   console.log(newRay)
+    //   this._data = newRay
+    //   console.log(this._data)
+    // }
     _generateMarkup() {
         console.log(this._data);
         return this._data.map((job)=>{
@@ -647,7 +686,7 @@ class Jobs extends _viewJs.MainView {
 }
 exports.default = new Jobs();
 
-},{"./view.js":"jsK6f","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jsK6f":[function(require,module,exports) {
+},{"./view.js":"jsK6f","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../controller/control.js":"kEMnJ"}],"jsK6f":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 // Main View
