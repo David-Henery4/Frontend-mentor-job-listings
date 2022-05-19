@@ -4,7 +4,7 @@ class Jobs extends MainView {
   _parentElement = document.querySelector(".jobs-container");
 
   _generateMarkup() {
-    console.log(this._data)
+    console.log(this._data);
     return this._data
       .map((job) => {
         return `<div class="job">
